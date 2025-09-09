@@ -1,7 +1,7 @@
 import "./App.css";
 import Todo from "./components/Todo";
 import Title from "./components/Title";
-import Confirm from "./components/Confirm";
+import Modal from "./components/Modal";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Todo title="Finish interview questions" />
         <Todo title="Land a 100k Job" />
       </div>
-      <Confirm phrase="Are You Sure?" onClick={() => } />
+      <Modal phrase="Are You Sure?"/>
     </div>
   );
 }
