@@ -1,35 +1,21 @@
 import "./App.css";
-import Todo from "./components/Todo";
-import Title from "./components/Title";
-import Modal from "./components/Modal";
-import React, {useState} from 'react';
-import Counter from "./components/Counter";
-
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Contact from "./pages/Contact.jsx";
+import Nav from "./components/Nav.jsx"
+import Users from "./pages/Users.jsx"
 
 function App() {
-
-  const [showModal, setShowModal] = useState(false)
-
-  function onTodoDelete () {
-    setShowModal(true)
-    console.log('onTodoDelete()')
-  }
-
   return (
     <div>
-      <Title></Title>
-      <div>
-        <input type="text" onChange={(event) => {
-          console.log(event.target.value)
-        }} />
-        <button onClick={() => setShowModal(true)}>Add todo</button>
-      </div>
-      <div className="todo__wrapper">
-        <Todo onTodoDelete={onTodoDelete} title="Finish Frontend Simplified" />
-        <Todo onTodoDelete={onTodoDelete} title="Finish interview questions" />
-        <Todo onTodoDelete={onTodoDelete} title="Land a 100k Job" />
-      </div>
-      {showModal && <Modal phrase="Are You Sure?"/>}
+      <Router>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path=" /users/:username" element={<Users />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
