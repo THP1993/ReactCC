@@ -2,8 +2,10 @@ import "./App.css";
 import Todo from "./components/Todo";
 import Title from "./components/Title";
 import Modal from "./components/Modal";
-
+import React, {useState} from 'react';
 function App() {
+  useState()
+
   return (
     <div>
       <Title></Title>
@@ -18,7 +20,7 @@ function App() {
         <Todo title="Finish interview questions" />
         <Todo title="Land a 100k Job" />
       </div>
-      <Modal phrase="Are You Sure?"/>
+      {false && <Modal phrase="Are You Sure?"/>}
     </div>
   );
 }
