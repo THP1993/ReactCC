@@ -2,6 +2,7 @@ import "./Modal.css";
 
 function Modal({ phrase }) {
   function confirm() {
+    
     console.log("confirm");
   }
   function cancel() {
